@@ -22,7 +22,7 @@ export class PagesComponent implements OnInit {
       // y cambia el tema cuando se le da click
       this.linkTheme?.setAttribute('href',url);
   
-      //guardar el tema en el localstorage para luego guardarlo cuando la pagina recarge
+     
      
       
     
