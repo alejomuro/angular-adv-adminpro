@@ -1,5 +1,5 @@
-import { APP_BASE_HREF } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { SettingsService } from 'src/app/services/settings.service';
 
 @Component({
   selector: 'app-account-settings',
@@ -8,26 +8,16 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class AccountSettingsComponent implements OnInit {
-  //seleccion al elemento en este caso el color del tema, por el ID
-  public linkTheme = document.querySelector('#theme');
-
-  constructor() { }
+  
+  constructor(private settingsService:SettingsService) {}
 
   ngOnInit(): void {
+    this.settingsService.checkCurrentTheme();
   }
 
   changeTheme(theme:string){
-    
-    //cambiamos todo el url que obtubimos es ecir el link theme,y en el color como tal colocar
-    //lo que venga en el theme 
-   const url= `./assets/css/colors/${theme}.css`
-
-    //para cambiar el atributo de html en este caso queremos cambiar el HREF por url 
-    // y cambia el tema cuando se le da click
-    this.linkTheme?.setAttribute('href',url);
-
-    //guardar el tema en el localstorage para luego guardarlo cuando la pagina recarge
-    localStorage.setItem('theme', url);
-  }
+    //cuando cambio el tema mando a llamar la instruccion de mi servicio
+    this.settingsService.changeTheme(theme);
+}
 
 }
