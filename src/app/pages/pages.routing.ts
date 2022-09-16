@@ -12,12 +12,13 @@ const routes:Routes=[
     {
         path:'dashboard', component:PagesComponent,
         children:[
-          {path:'', component:DashboardComponent},
-          {path:'progress', component:ProgressComponent},
-          {path:'grafica1', component:Grafica1Component},
-          {path:'account-settings', component:AccountSettingsComponent},
-          {path:'promesas', component:PromesasComponent },
-          {path:'rxjs', component:RxjsComponent}
+          //el titulo es para mostralo en cada titulo de cada componente
+          {path:'', component:DashboardComponent, data:{titulo: 'dashboard'}},
+          {path:'progress', component:ProgressComponent, data:{titulo: 'progressBar'}},
+          {path:'grafica1', component:Grafica1Component, data:{titulo:'grafica 1'}},
+          {path:'account-settings', component:AccountSettingsComponent, data:{titulo: 'ajuste de cuenta'}},
+          {path:'promesas', component:PromesasComponent, data:{titulo: 'promesas'} },
+          {path:'rxjs', component:RxjsComponent, data:{titulo: 'rxjs'}}
           
         ]
       },
