@@ -19,14 +19,12 @@ export class BreadcrumbsComponent implements OnDestroy{
                               this.titulo=titulo;
                                document.title= `adminPro - ${titulo}`;
 });
-    
-   }
+  }
   ngOnDestroy(): void {
     //para hacer la limpieza
   this.tituloSubs$.unsubscribe();
   }
-
-   getArgumentosRuta(){
+  getArgumentosRuta(){
    return this.router.events
     .pipe(
       //si event es una instancia de activatedEnd, solo deberiamos ver las instancias de activationEnd

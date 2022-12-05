@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-header',
@@ -6,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class HeaderComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+export class HeaderComponent  {
+//aqui inyectamos el servicio para poder llamar al logout
+  constructor( private usuarioService: UsuarioService ) { }
+  //llamamos este logout en el HTML
+  logout(){
+    this.usuarioService.logout();
   }
+
+  
 
 }

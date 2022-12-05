@@ -20,6 +20,7 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 
 
+
 @NgModule({
   declarations: [
     PagesComponent,
